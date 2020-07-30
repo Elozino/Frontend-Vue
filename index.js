@@ -25,7 +25,7 @@ function getRandomColor() {
       alert("You did not enter a valid number");
       return false;
     }
-    if(val < 0 || val > 255){
+    if(val <= 0 || val > 255){
       alert("Enter a number between 0 and 255");
       return false;
     }
