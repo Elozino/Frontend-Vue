@@ -10,9 +10,9 @@ document.getElementById("button").onclick=function(){
 }
 function getRandomColor() {
     var a = document.getElementById('randColor').value;
-    var r = Math.floor(Math.random() * (255 - a) + a);
-    var g = Math.floor(Math.random() * (255 - a) + a);
-    var b = Math.floor(Math.random() * (255 - a) + a);
+    var r = Math.floor(Math.random() * a);
+    var g = Math.floor(Math.random() * a);
+    var b = Math.floor(Math.random() * a);
     var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     return color;
   }
