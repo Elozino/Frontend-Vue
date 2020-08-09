@@ -1,35 +1,22 @@
-document.getElementById("button").onclick=function(){
-    var newVal = validate();
-    if (newVal == false){
-        return false;
-    }
-    else{
-        getRandomColor();
-        console.log(color);
-    }
+const btn = document.getElementById('btn');
+const randNumber = () => {
+  const colorpad = document.getElementById('colorpad');
+  const randColor = document.getElementById('randColor').value;
+
+  console.log(randColor);
+
+  if(randColor === ''){
+    alert("You did not enter a valid number");
+  } 
+  else if(randColor < 0 || randColor > 255){
+    alert("Enter a number between 0 and 255");
+  }
+  else{
+    var r = Math.floor(Math.random() * randColor);
+    var g = Math.floor(Math.random() * randColor);
+    var b = Math.floor(Math.random() * randColor);
+    colorpad.style.background = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  }
 }
-function getRandomColor() {
-    var a = document.getElementById('randColor').value;
-    var r = Math.floor(Math.random() * a);
-    var g = Math.floor(Math.random() * a);
-    var b = Math.floor(Math.random() * a);
-    var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
-    return color;
-  }
-  function setRandomColor() { 
-    document.getElementById("colorpad").style.backgroundColor = getRandomColor();
-  }
-  function validate(){
-    var val = document.getElementById("randColor").value;
-    if(val == ""){
-      alert("You did not enter a valid number");
-      return false;
-    }
-    else if(val < 0 || val > 255){
-      alert("Enter a number between 0 and 255");
-      return false;
-    }
-    else{
-      return setRandomColor();
-    }
-  }
+
+btn.addEventListener('click', randNumber);
